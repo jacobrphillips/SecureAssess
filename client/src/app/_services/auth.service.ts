@@ -31,7 +31,7 @@ export class AuthService {
       )
       .subscribe({
         error: (err) => {
-          this.toastr.error(err.error);
+          console.log(err.error.errors);
         },
       });
   }

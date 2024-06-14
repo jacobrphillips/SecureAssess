@@ -26,9 +26,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login']); // Navigate to login after successful registration
       },
       error: (err) => {
-        this.toastr.error(
-          `Registration failed. Please try again. ${err.error}`
-        );
+        console.error(err);
       },
     });
   }
