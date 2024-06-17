@@ -1,0 +1,54 @@
+[
+  {
+    "Id": 1,
+    "EmailAddress": "john@gmail.com",
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Created": "2023-01-01T00:00:00Z",
+    "LastActive": "2023-01-01T00:00:00Z",
+    "Photo": {
+      "Id": 1,
+      "Url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
+      "IsMain": true,
+      "PublicId": "photo1_public_id",
+      "AppUserId": 1
+    },
+    "Companies": [
+      {
+        "Id": 1,
+        "Name": "ABC Company",
+        "City": "New York City",
+        "Country": "USA",
+        "Contacts": [],
+        "Assessments": [],
+        "VulnerabilityReports": []
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "EmailAddress": "jane@gmail.com",
+    "FirstName": "Jane",
+    "LastName": "Doe",
+    "Created": "2023-01-01T00:00:00Z",
+    "LastActive": "2023-01-01T00:00:00Z",
+    "Photo": {
+      "Id": 2,
+      "Url": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
+      "IsMain": true,
+      "PublicId": "photo2_public_id",
+      "AppUserId": 2
+    },
+    "Companies": [
+      {
+        "Id": 2,
+        "Name": "XYZ Company",
+        "City": "New York City",
+        "Country": "USA",
+        "Contacts": [],
+        "Assessments": [],
+        "VulnerabilityReports": []
+      }
+    ]
+  }
+]

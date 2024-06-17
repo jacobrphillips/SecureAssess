@@ -14,8 +14,8 @@ export class NavComponent {
     this.authService.logout();
   }
 
-  get username(): string | null {
+  get emailaddress(): string | null {
     const user: User | null = this.authService.getUser();
-    return user ? user.username : null;
+    return user ? user.emailAddress : null;
   }
 }

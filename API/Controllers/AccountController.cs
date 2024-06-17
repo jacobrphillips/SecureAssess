@@ -1,6 +1,5 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using API.Controllers;
 using API.Data;
 using API.DTOs;
 using API.Entities;
@@ -24,13 +23,13 @@ public class AccountController : BaseApiController
     [HttpPost("register")] // POST: api/account/register
     public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
-        if (await UserExists(registerDto.UserName)) return BadRequest($"Username {registerDto.UserName} already exists");
+        if (await UserExists(registerDto.EmailAddress)) return BadRequest($"Email address {registerDto.EmailAddress} already exists");
 
         using var hmac = new HMACSHA512();
 
         var user = new AppUser
         {
-            UserName = registerDto.UserName.ToLower(),
+            EmailAddress = registerDto.EmailAddress.ToLower(),
             PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
             PasswordSalt = hmac.Key
         };
@@ -40,7 +39,7 @@ public class AccountController : BaseApiController
 
         return new UserDto
         {
-            Username = user.UserName,
+            EmailAddress = user.EmailAddress,
             Token = _tokenService.CreateToken(user)
         };
     }
@@ -48,7 +47,7 @@ public class AccountController : BaseApiController
     [HttpPost("login")] // POST: api/account/login
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
-        var user = await _context.Users.SingleOrDefaultAsync(user => user.UserName == loginDto.UserName);
+        var user = await _context.Users.SingleOrDefaultAsync(user => user.EmailAddress == loginDto.EmailAddress);
 
         if (user == null) return Unauthorized("Invalid username");
 
@@ -63,14 +62,14 @@ public class AccountController : BaseApiController
 
         return new UserDto
         {
-            Username = user.UserName,
+            EmailAddress = user.EmailAddress,
             Token = _tokenService.CreateToken(user)
         };
     }
 
     private async Task<bool> UserExists(string username)
     {
-        return await _context.Users.AnyAsync(user => user.UserName == username.ToLower());
+        return await _context.Users.AnyAsync(user => user.EmailAddress == username.ToLower());
     }
 
 }

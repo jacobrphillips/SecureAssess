@@ -17,8 +17,8 @@ export class AuthService {
     private toastr: ToastrService
   ) {}
 
-  login(username: string, password: string): void {
-    const loginModel = { username, password };
+  login(emailaddress: string, password: string): void {
+    const loginModel = { emailaddress, password };
     this.accountService
       .login(loginModel)
       .pipe(

@@ -7,12 +7,12 @@ import { AuthService } from 'app/_services/auth.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  username: string = '';
+  emailaddress: string = '';
   password: string = '';
 
   constructor(private authService: AuthService) {}
 
   onSubmit(): void {
-    this.authService.login(this.username, this.password);
+    this.authService.login(this.emailaddress, this.password);
   }
 }
