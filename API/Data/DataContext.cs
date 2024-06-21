@@ -15,6 +15,7 @@ public class DataContext : DbContext
     public DbSet<Questionnaire> Questionnaires { get; set; }
     public DbSet<Question> Questions { get; set; }
     public DbSet<Photo> Photos { get; set; }
+    public DbSet<Certificate> Certificates { get; set; }
     public DbSet<AnswerOption> AnswerOptions { get; set; }
     public DbSet<VulnerabilityReport> VulnerabilityReports { get; set; }
     public DbSet<Sample> Samples { get; set; }

@@ -1,0 +1,55 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <div class="row" *ngIf="member">
+    <div class="col-4">
+      <div class="card">
+        <img
+          src="{{ member.photoUrl || './assets/user.png' }}"
+          alt="{{ member.firstName }}'s photo'"
+          class="card-img-top img-thumbnail"
+        />
+        <div class="card-body">
+          <div>
+            <strong>Name:</strong>
+            <p>{{ member.fullName }}</p>
+          </div>
+          <div>
+            <strong>Email Address:</strong>
+            <p>{{ member.emailAddress }}</p>
+          </div>
+          <div>
+            <strong>Companies:</strong>
+            <div *ngFor="let company of member.companies">
+              <p>{{ company.name }}</p>
+            </div>
+          </div>
+          <div>
+            <strong>Last Active:</strong>
+            <p>{{ member.lastActive }}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary">Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <tabset class="member-tabs" *ngIf="member">
+        <tab heading="Companies">
+          <div *ngFor="let company of member.companies">
+            <p>{{ company.name }}</p>
+          </div>
+        </tab>
+        <tab heading="Assessments">
+          <div *ngFor="let company of member.companies">
+            <p>{{ company.assessments }}</p>
+          </div>
+        </tab>
+        <tab heading="Messages"> </tab>
+      </tabset>
+    </div>
+  </div>
+</div>

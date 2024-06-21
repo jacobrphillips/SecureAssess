@@ -13,6 +13,7 @@ namespace API.Helpers
             CreateMap<Company, CompanyDto>();
             CreateMap<Assessment, AssessmentDto>();
             CreateMap<VulnerabilityReport, VulnerabilityReportDto>();
+            CreateMap<Certificate, CertificateDto>();
         }
     }
 }

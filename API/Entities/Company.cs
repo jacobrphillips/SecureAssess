@@ -11,6 +11,7 @@ namespace API.Entities
         public string Country { get; set; }
         public List<AppUser> Contacts { get; set; } = new List<AppUser>();
         public List<Assessment> Assessments { get; set; } = new List<Assessment>();
+        public List<Certificate> Certificates { get; set; } = new List<Certificate>();
         public List<VulnerabilityReport> VulnerabilityReports { get; set; } = new List<VulnerabilityReport>();
     }
 }

@@ -9,6 +9,7 @@ namespace API.DTOs
         public string Country { get; set; }
         public List<MemberDto> Contacts { get; set; }
         public List<AssessmentDto> Assessments { get; set; }
+        public List<CertificateDto> Certificates { get; set; }
         public List<VulnerabilityReportDto> VulnerabilityReports { get; set; }
     }
 }

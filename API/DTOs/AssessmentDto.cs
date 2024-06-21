@@ -1,3 +1,5 @@
+using API.Entities;
+
 namespace API.DTOs
 {
     public class AssessmentDto
@@ -7,6 +9,7 @@ namespace API.DTOs
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public AssessmentType Type { get; set; }
+        public AppUser Assessor { get; set; }
     }
 
     public enum AssessmentType

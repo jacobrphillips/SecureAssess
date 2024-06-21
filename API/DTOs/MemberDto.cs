@@ -6,6 +6,13 @@ namespace API.DTOs
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
         public string PhotoUrl { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
